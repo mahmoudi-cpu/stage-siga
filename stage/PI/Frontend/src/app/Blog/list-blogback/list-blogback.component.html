@@ -1,0 +1,80 @@
+<app-sidemenu></app-sidemenu>
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <!--breadcrumb-->
+        <div class="page-breadcrumb d-none d-md-flex align-items-center mb-3">
+            <div class="breadcrumb-title pe-3">Tables</div>
+            <div class="ms-auto">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary">Settings</button>
+                    <button type="button" class="btn btn-primary bg-split-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">	<span class="visually-hidden">Toggle Dropdown</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">	<a class="dropdown-item" href="javascript:;">Action</a>
+                        <a class="dropdown-item" href="javascript:;">Another action</a>
+                        <a class="dropdown-item" href="javascript:;">Something else here</a>
+                        <div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Separated link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end breadcrumb-->
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <h5>publications</h5>
+                    <hr/>
+                    <div class="Tables">
+                        <table class="table table-bordered table-bordered mb-0" >
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">First</th>
+                                    <th scope="col">Last</th>
+                                    <th scope="col">Handle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr >
+                                    <th scope="row">1</th>
+                                    <td>Titre</td>
+                                    <td>Date de Creation</td>
+                                    <td>Utilisateur</td>
+                                    <td >Status</td>
+                                    <td>Action</td>
+                                </tr>
+                                <tr *ngFor="let publication of publications">
+                                    <th scope="row">{{ publication.numPub }}</th>
+                                    <td>
+                                        <!-- link details lehne -->
+                                        {{ publication.sujet }}
+                                    </td>
+                                    <td>{{ publication.dateCreation }}</td>
+                                    <td>{{ publication.user }}</td>
+                                    <td>
+                                        <span *ngIf="publication.status == true">Approved</span>
+                                        <span *ngIf="publication.status == false">In progress</span>
+                                    </td>
+                                    <td>        
+                                        <div class="btn-group pull-right">
+                                            <button id="bEdit" type="button" class="btn btn-sm btn-default">
+                                                <span class="fa fa-check-circle" (click)="approvePublication(publication.numPub)"> </span>
+                                            </button>
+                                            <button id="bDel" type="button" class="btn btn-sm btn-default"  (click)="deletePublication(publication.numPub)">
+                                                <span class="fa fa-trash"> </span>
+                                            </button>
+                                            <button id="bAcep" type="button" class="btn btn-sm btn-default" style="display:none;">
+                                                <span class="fa fa-check-circle"> </span>
+                                            </button>
+                                    
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

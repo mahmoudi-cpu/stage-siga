@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>Mawalny Solution </title>
+    
+
+</head>
+
+<body>
+    
+
+       
+                    
+
+
+<div class="breadcrumb breadcrumb-list mb-0">
+<span class="primary-right-round"></span>
+<div class="container">
+<h1 class="text-white">Event Details</h1>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li>Event Details</li>
+</ul>
+</div>
+</div>
+<div class="text-center mb-40">
+<h3>Book an Event</h3>
+<p>Hi, we are always open for cooperation and suggestions, <br> contact us in one of the ways below</p>
+</div>
+<form>
+  <div class="panel-body">
+<div class="card">
+<h3 class="border-bottom">Enter Details</h3>
+<div class="mb-10">
+<div class="event-details" *ngIf="event">
+  <h2>Event Details</h2>
+  <hr/>
+  <div class="detail-item">
+    <span class="label">Event Name:</span>
+    <span class="value">{{ event.nameEvent }}</span>
+  </div>
+  <div class="detail-item">
+    <span class="label">Event Date:</span>
+    <span class="value">{{ event.dateEvent }}</span>
+  </div>
+  <div class="detail-item">
+    <span class="label">Event Description:</span>
+    <span class="value">{{ event.descriptionEvent }}</span>
+  </div>
+  <div class="detail-item">
+    <span class="label">Domain:</span>
+    <span class="value">{{ event.domain }}</span>
+  </div>
+  <div class="detail-item">
+    <span class="label">Likes:</span>
+    <span class="value">{{ event.likes }}</span>
+  </div>
+  <div class="detail-item">
+    <span class="label">Dislikes:</span>
+    <span class="value">{{ event.dislikes }}</span>
+  </div>
+  <div class="detail-item">
+    <span class="label">Invest Needed:</span>
+    <span class="value">{{ event.investNeeded }}</span>
+  </div>
+  <div class="detail-item">
+    <span class="label">Type:</span>
+    <span class="value">{{ event.type }}</span>
+  </div>
+  <div class="detail-item">
+    <span class="label">Event Status:</span>
+    <span class="value">{{ event.eventStatus }}</span>
+  </div>  
+</div>
+
+
+  <button type="submit" (click)="BacktoAdminDashboard()" class="btn btn-primary">Back to Event List</button>
+ 
+
+</div>
+
+</div>
+</div>
+</form>
+</body>

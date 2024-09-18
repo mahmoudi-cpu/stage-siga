@@ -1,0 +1,142 @@
+<!--
+<div class="content">
+  <div class="container">
+      <div class="row">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-8">
+              <div class="accordion" >
+<div class="accordion-item mb-4" id="reviews">
+  <div >
+      <div class="accordion-button d-flex justify-content-between align-items-center">
+          <span class="w-75 mb-0">Reviews</span>
+              <a href="javascript:void(0);" class="btn btn-gradient pull-right write-review add-review" data-bs-toggle="modal" data-bs-target="#add-review">Write a review</a>
+      </div>
+  </div>
+</div>
+</div>
+</div>
+</div>  
+  </div>
+
+  <div class="modal custom-modal fade payment-modal" id="add-review" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+    <div class="modal-content">
+    <div class="modal-header">
+    <div class="form-header modal-header-title">
+    <h4 class="mb-0">Write a Review</h4>
+    </div>
+    <a class="close" data-bs-dismiss="modal" aria-label="Close">
+    <span class="align-center" aria-hidden="true"><i class="feather-x"></i></span>
+    </a>
+    </div>
+    <div class="modal-body">
+    <form>
+    <div class="row">
+    <div class="col-lg-12">
+    <div class="input-space">
+    <label class="form-label">Your Name <span>*</span></label>
+    <input type="text" class="form-control" id="reviewer-name" placeholder="Enter Your Name">
+    </div>
+    </div>
+    <div class="col-lg-12">
+    <div class="input-space">
+    <label class="form-label">Title of your review</label>
+    <input type="text" class="form-control" id="title" placeholder="If you could say it in one sentence, what would you say?">
+    </div>
+    </div>
+    <div class="col-lg-12">
+    <div class="input-space">
+    <label class="form-label">Your Review <span>*</span></label>
+    <textarea class="form-control" id="review" rows="3" placeholder="Enter Your Review"></textarea>
+    <small class="text-muted"><span id="chars">100</span> characters remaining</small>
+    </div>
+    </div>
+    <div class="col-lg-12">
+    <div class="input-space review">
+    <label class="form-label">Rating <span>*</span></label>
+    <div class="star-rating">
+    <input id="star-5" type="radio" name="rating" value="star-5">
+    <label for="star-5" title="5 stars">
+    <i class="active fa fa-star"></i>
+    </label>
+    <input id="star-4" type="radio" name="rating" value="star-4">
+    <label for="star-4" title="4 stars">
+    <i class="active fa fa-star"></i>
+    </label>
+    <input id="star-3" type="radio" name="rating" value="star-3">
+    <label for="star-3" title="3 stars">
+    <i class="active fa fa-star"></i>
+    </label>
+    <input id="star-2" type="radio" name="rating" value="star-2">
+    <label for="star-2" title="2 stars">
+    <i class="active fa fa-star"></i>
+    </label>
+    <input id="star-1" type="radio" name="rating" value="star-1">
+    <label for="star-1" title="1 star">
+    <i class="active fa fa-star"></i>
+    </label>
+    </div>
+    </div>
+    </div>
+    <div class="form-group">
+    <div class="terms-accept">
+    <div class="d-flex align-items-center form-check">
+    <input type="checkbox" id="terms_accept" class="form-check-input">
+    <label for="terms_accept">I have read and accept <a href="terms-condition.html">Terms &amp; Conditions</a></label>
+    </div>
+    </div>
+    </div>
+    </div>
+    </form>
+    </div>
+    <div class="modal-footer">
+    <div class="table-accept-btn">
+    <a href="javascript:;" class="btn btn-primary">Add Review</a>
+    </div>
+    </div>
+    </div>
+    </div>
+  </div>
+</div>
+-->
+
+<section class="section work-section">
+  <div class="work-cock-img">
+      <img src="assets/img/icons/work-cock.svg" alt="Icon">
+  </div>
+  <div class="work-img">
+      <div class="work-img-right">
+          <img src="assets/img/bg/work-bg.png" alt="Icon">
+      </div>
+  </div>
+  <div class="container">
+      <div class="section-heading aos" >
+          <h2>Our  <span> Services</span></h2>
+          <p class="sub-title">Empower Your Financial Future with Smart loans</p>
+      </div>
+
+      <div class="row justify-content-center" *ngIf="offers.length > 0">
+  <div class="col-lg-4 col-md-6 d-flex" *ngFor="let o of offers | slice:0:4; let i=index">
+    <div class="card work-grid w-100 aos">
+      <div class="card-body">
+        <div class="work-icon">
+          <div class="work-icon-inner">
+            <img src="assets/img/icons/work-icon1.svg" alt="Icon">
+          </div>
+        </div>
+        <div class="work-content">
+          <h5><a href="register.html">{{o.typeLoan}}</a></h5>
+          <p class="mb-1">Status: {{o.status}}</p>
+          <p class="mb-1">Max Amount: {{o.maxAmnt}}.000</p>
+          <p class="mb-1">Min Amount: {{o.minAmnt}}</p>
+          <p class="mb-1">Min Periode: {{o.minRepaymentPer}}</p>
+          <p class="mb-1">Interest Rate: {{o.intRate}}</p>
+          <p class="mb-1"></p>
+          <a class="btn" routerLink="/similator">Simulation <i class="feather-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>

@@ -1,0 +1,60 @@
+<div class="Admin Dashboard">
+  <div class="panel-heading">
+      <h2>Shareholder List</h2>
+  </div> 
+  <br>
+  <br>
+  <div><button (click)="addShareholder()"  class="btn btn-secondary">Add Shareholder</button></div>
+
+  <div class="panel-body">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Search by shareholder last name" [(ngModel)]="searchTerm">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" (click)="searchShareholder()">Search</button>
+      </div>
+    </div>
+    <div class="form-group">
+      <!-- No need to filter by availability for shareholders -->
+    </div>
+      <table class="table table-striped">
+          <thead>
+              <tr>
+                  <th>Last Name</th>
+                  <th>First Name</th>
+                  <th>Email</th>
+                  <th>Phone Number</th>
+                  <th>Partner</th>
+                  <th>Investment</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let shareholder of shareholders | async">
+                <td>{{ shareholder.lastNameShareholder }}</td>
+                <td>{{ shareholder.firstNameShareholder }}</td>
+                <td>{{ shareholder.email }}</td> 
+                <td>{{ shareholder.numTel }}</td>
+                <td>{{ shareholder.partner }}</td>
+                <td>{{ shareholder.investment }}</td> 
+                <td><button (click)="shareholderDetails(shareholder.idShareholder)" class="btn btn-success" style="margin-right: 7px;">Details</button>
+                  <button   style="margin-right: 5px;" class="btn btn-danger" (click)="delete(shareholder)" >Delete</button>
+                </td>
+               
+                
+                <!-- You can add update and delete buttons for shareholders if needed -->
+            </tr>
+        </tbody>
+      </table>
+      
+      
+    
+      
+
+      
+  </div>
+ 
+  <google-chart
+  [data]="GoogleChartInterface"
+>
+</google-chart>
+
+</div>

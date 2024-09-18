@@ -1,0 +1,81 @@
+<div class="page-content-wrapper">
+
+    <div class="page-content">		
+        <div class="sidebar-wrapper">
+            <div class="sidebar-header">				
+                <img src="./assets/img/logo-img.png" class="img-fluid small-logo " alt="Logo" />
+            </div>
+
+            <ul class="metismenu" id="menu">
+                <li>
+                    <a routerLink="/app-list-offer">
+                        <div class="parent-icon icon-color-2"><i class="bx bx-envelope"></i></div>
+                        <div class="menu-title">Offers</div>
+                    </a>
+                </li>
+                <!-- Autres éléments de menu ici -->
+                <li>
+                    <a href="/side">
+                        <div class="parent-icon icon-color-5"><i class="bx bx-group"></i></div>
+                        <div class="menu-title">Dashboard</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="to-do.html">
+                        <div class="parent-icon icon-color-6"><i class="bx bx-task"></i></div>
+                        <div class="menu-title">Blog Verification</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="invoice.html">
+                        <div class="parent-icon icon-color-7"><i class="bx bx-file"></i></div>
+                        <div class="menu-title">Invoice</div>
+                    </a>
+                </li>
+                <!-- Autres éléments de menu ici -->
+            </ul>
+        </div>
+    </div>
+
+    <header class="top-header">
+        <nav class="navbar navbar-expand">
+            <div class="left-topbar d-flex align-items-center"></div>
+            <div class="flex-grow-1 search-bar">
+                <div class="input-group">
+                    <button class="btn btn-search-back search-arrow-back" type="button"><i class="bx bx-arrow-back"></i></button>
+                    <input type="text" class="form-control" placeholder="search" />
+                    <button class="btn " type="button"><i class="lni lni-search-alt"></i></button>
+                </div>
+            </div>
+            <div class="right-topbar ms-auto">
+                <ul class="navbar-nav">
+                    <!-- Affichage des informations utilisateur -->
+                    <li class="nav-item">
+						<a class="nav-link">
+							<div class="d-flex user-box align-items-center">
+								<div class="user-info">
+									<p class="user-name mb-0">{{ userEmail || 'User' }}</p> <!-- Affichage de l'email ou 'User' -->
+									<p class="designattion mb-0">Available</p>
+								</div>
+								<img src="./assets/img/avatars/avatar-1.png" class="user-img" alt="user avatar">
+							</div>
+						</a>
+					</li>
+                    <!-- Bouton de déconnexion -->
+                    <li class="nav-item">
+                        <a class="btn" (click)="logout()" routerLink="/login">
+                            <span><i class="feather-users"></i></span>Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="page-wrapper"></div>
+    <div class="overlay toggle-btn-mobile"></div>
+    <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+    <app-add-event></app-add-event>
+    <app-event-statistics></app-event-statistics>
+    <app-event-listAdmin></app-event-listAdmin>
+</div>

@@ -1,0 +1,51 @@
+<app-navbar></app-navbar>
+<div class="main-wrapper blog">
+    <div class="breadcrumb breadcrumb-list mb-0">
+        <div class="container">
+            <h1 class="text-white"><br><br><br></h1>
+        </div>
+    </div>
+    <div class="content blog-grid">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-10 col-lg-8 mx-auto">
+                    <div *ngFor="let publication of publications" class="featured-venues-item">
+                        <div class="listing-item">
+                            <div class="listing-img">
+                                <a>
+                                    <!-- Bind the correct image URL here -->
+                                    <img [src]="publication.photo" class="img-fluid" alt="Publication Image">
+                                </a>
+                                <div class="fav-item-venues news-sports">
+                                    <span class="tag tag-blue">Read more</span>
+                                    <div class="list-reviews coche-star">
+                                        <a href="javascript:void(0)" class="fav-icon">
+                                            <i class="feather-heart"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="listing-content news-content">
+                                <h3 class="listing-title">
+                                    <a>{{ publication.sujet }}</a>
+                                    <!-- link details lehne -->
+                                </h3>
+                                <p>{{ publication.contenu }}</p>
+                                <div class="listing-button read-new">
+                                    <span><img src="assets/img/icons/clock.svg" alt="Icon">10 Min To Read</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-pagination">
+                <nav>
+                    <ul class="pagination justify-content-center pagination-center">
+                        <!-- Pagination -->
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>

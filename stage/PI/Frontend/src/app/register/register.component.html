@@ -1,0 +1,125 @@
+<div class="main-wrapper authendication-pages">
+  <div class="content">
+    <div class="container wrapper no-padding">
+      <div class="row no-margin vph-100">
+        <div class="col-12 col-sm-12 col-lg-6 no-padding">
+          <!-- Banner -->
+          <div class="banner-bg register">
+            <div class="row no-margin h-100">
+              <div class="col-sm-10 col-md-10 col-lg-10 mx-auto">
+                <div class="h-100 d-flex justify-content-center align-items-center">
+                  <div class="text-bg register text-center">
+                    <button type="button" class="btn btn-limegreen text-capitalize">
+                      <i class="fa-solid fa-thumbs-up me-3"></i>Register User & Coach
+                    </button>
+                    <p>Sign up now for advanced sports software solutions.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-lg-6 no-padding">
+          <!-- Registration Form -->
+          <div class="dull-pg">
+            <div class="row no-margin vph-100 d-flex align-items-center justify-content-center">
+              <div class="col-sm-10 col-md-10 col-lg-10 mx-auto">
+                <header class="text-center">
+                  <a href="user-dashboard.html">
+                    <img src="assets/img/logo-black.svg" class="img-fluid" alt="Logo" />
+                  </a>
+                </header>
+                <div class="shadow-card">
+                  <h2>Sign Up</h2>
+                  <p>Create your account</p>
+
+                  <!-- Registration Form Content -->
+                  <form [formGroup]="registerForm" (ngSubmit)="submitForm()">
+                    <div class="form-group">
+                      <div class="group-img">
+                        <i class="feather-user"></i>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Firstname"
+                          name="firstname"
+                          formControlName="firstname"
+                        />
+                        <br />
+                      </div>
+                      <div class="group-img">
+                        <i class="feather-user"></i>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Lastname"
+                          name="lastname"
+                          formControlName="lastname"
+                        />
+                        <br />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="group-img">
+                        <i class="feather-mail"></i>
+                        <input
+                          type="email"
+                          class="form-control"
+                          placeholder="Email"
+                          name="email"
+                          formControlName="email"
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="pass-group group-img">
+                        <i 
+                          class="toggle-password feather-eye" 
+                          (click)="togglePassword()"
+                          [ngClass]="{'feather-eye': !showPassword, 'feather-eye-off': showPassword}"
+                        ></i>
+                        <input
+                          [type]="showPassword ? 'text' : 'password'"
+                          class="form-control pass-input"
+                          placeholder="Password"
+                          name="password"
+                          formControlName="password"
+                        />
+                      </div>
+                    </div>
+                    
+                    <!-- Role Selection -->
+                    <div class="form-group">
+                      <label for="role">Select Role:</label>
+                      <select
+                        class="form-control"
+                        name="role"
+                        formControlName="role"
+                      >
+                        <option value="ADMIN">Admin</option>
+                        <option value="CUSTOMER">Customer</option>
+                        <option value="AGENT">Agent</option>
+                        <option value="SHAREHOLDER">Shareholder</option>
+                      </select>
+                    </div>
+
+                    <button
+                      class="btn btn-secondary register-btn d-inline-flex justify-content-center align-items-center w-100 btn-block"
+                      type="submit"
+                      [disabled]="registerForm.invalid"
+                    >
+                      Sign Up<i class="feather-arrow-right-circle ms-2"></i>
+                    </button>
+                  </form>
+                  <p>
+                    Already have an account? <a routerLink="/login">Log in!</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

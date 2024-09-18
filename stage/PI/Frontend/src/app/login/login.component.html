@@ -1,0 +1,294 @@
+<div class="loader-img">
+  <img src="assets/img/loader.png" class="img-fluid" alt="Global" />
+</div>
+
+<div class="main-wrapper authendication-pages">
+  <div class="content">
+    <div class="container wrapper no-padding">
+      <div class="row no-margin vph-100">
+        <div class="col-12 col-sm-12 col-lg-6 no-padding">
+          <div class="banner-bg login">
+            <div class="row no-margin h-100">
+              <div class="col-sm-10 col-md-10 col-lg-10 mx-auto">
+                <div
+                  class="h-100 d-flex justify-content-center align-items-center"
+                >
+                  <div class="text-bg register text-center">
+                    <button
+                      type="button"
+                      class="btn btn-limegreen text-capitalize"
+                    >
+                      <i class="fa-solid fa-thumbs-up me-3"></i>Login User &
+                      Coach
+                    </button>
+                    <p>
+                      Log in right away for our advanced sports software
+                      solutions, created to address issues in regular sporting
+                      events and activities.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-lg-6 no-padding">
+          <div class="dull-pg">
+            <div
+              class="row no-margin vph-100 d-flex align-items-center justify-content-center"
+            >
+              <div class="col-sm-10 col-md-10 col-lg-10 mx-auto">
+                <header class="text-center">
+                  <a href="user-dashboard.html">
+                    <img
+                      src="assets/img/logo-black.svg"
+                      class="img-fluid"
+                      alt="Logo"
+                    />
+                  </a>
+                </header>
+                <div class="shadow-card">
+                  <h2>Welcome Back</h2>
+                  <p>Login into your account</p>
+                  <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button
+                        class="nav-link active d-flex align-items-center"
+                        id="user-tab"
+                        type="button"
+                        role="tab"
+                        aria-controls="user"
+                        aria-selected="true"
+                      >
+                        <span
+                          class="d-flex justify-content-center align-items-center"
+                        ></span
+                        >I am a User
+                      </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button
+                        class="nav-link d-flex align-items-center"
+                        id="coach-tab"
+                        type="button"
+                        role="tab"
+                        aria-controls="coach"
+                        aria-selected="false"
+                      >
+                        <span
+                          class="d-flex justify-content-center align-items-center"
+                        ></span
+                        >I am a Coach
+                      </button>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="myTabContent">
+                    <div
+                      class="tab-pane fade show active"
+                      id="user"
+                      role="tabpanel"
+                      aria-labelledby="user-tab"
+                    >
+                      <form
+                        action="https://dreamsports.dreamstechnologies.com/html/user-dashboard.html"
+                        [formGroup]="loginForm"
+                        (ngSubmit)="submitForm()"
+                      >
+                        <div class="form-group">
+                          <div class="group-img">
+                            <i class="feather-user"></i>
+                            <input
+                              type="text"
+                              class="form-control"
+                              placeholder="Email / Username"
+                              formControlName="email"
+                            />
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="pass-group group-img">
+                            <i class="toggle-password feather-eye-off"></i>
+                            <input
+                              type="password"
+                              class="form-control pass-input"
+                              placeholder="Password"
+                              formControlName="password"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="form-group d-sm-flex align-items-center justify-content-between"
+                        >
+                          <div
+                            class="form-check form-switch d-flex align-items-center justify-content-start"
+                          >
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="user-pass"
+                            />
+                            <label class="form-check-label" for="user-pass"
+                              >Remember Password</label
+                            >
+                          </div>
+                          <span
+                            ><a routerLink="/forget" class="forgot-pass"
+                              >Forgot Password</a
+                            ></span
+                          >
+                        </div>
+                        <button
+                          class="btn btn-secondary register-btn d-inline-flex justify-content-center align-items-center w-100 btn-block"
+                          type="submit"
+                          [disabled]="loginForm.invalid"
+                        >
+                          Sign In<i class="feather-arrow-right-circle ms-2"></i>
+                        </button>
+                        <div class="form-group">
+                          <div class="login-options text-center">
+                            <span class="text">Or continue with</span>
+                          </div>
+                        </div>
+                        <div class="form-group mb-0">
+                          <ul
+                            class="social-login d-flex justify-content-center align-items-center"
+                          >
+                            <li class="text-center">
+                              <button
+                                type="button"
+                                class="btn btn-social d-flex align-items-center justify-content-center"
+                              >
+                                <img
+                                  src="assets/img/icons/google.svg"
+                                  class="img-fluid"
+                                  alt="Google"
+                                />
+                                <span>Google</span>
+                              </button>
+                            </li>
+                            <li class="text-center">
+                              <button
+                                type="button"
+                                class="btn btn-social d-flex align-items-center justify-content-center"
+                              >
+                                <img
+                                  src="assets/img/icons/facebook.svg"
+                                  class="img-fluid"
+                                  alt="Facebook"
+                                />
+                                <span>Facebook</span>
+                              </button>
+                            </li>
+                          </ul>
+                        </div>
+                      </form>
+                    </div>
+                    <div
+                      class="tab-pane fade"
+                      id="coach"
+                      role="tabpanel"
+                      aria-labelledby="coach-tab"
+                    >
+                      <form
+                        action="https://dreamsports.dreamstechnologies.com/html/index.html"
+                      >
+                        <div class="form-group">
+                          <div class="group-img">
+                            <i class="feather-user"></i>
+                            <input
+                              type="text"
+                              class="form-control"
+                              placeholder="Email / Username"
+                            />
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="pass-group group-img">
+                            <i class="toggle-password feather-eye-off"></i>
+                            <input
+                              type="password"
+                              class="form-control pass-input"
+                              placeholder="Password"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="form-group d-sm-flex align-items-center justify-content-between"
+                        >
+                          <div
+                            class="form-check form-switch d-flex align-items-center justify-content-start"
+                          >
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="user-login"
+                            />
+                            <label class="form-check-label" for="user-login"
+                              >Remember Password</label
+                            >
+                          </div>
+                          <span
+                            ><a href="forgot-password.html" class="forgot-pass"
+                              >Forgot Password</a
+                            ></span
+                          >
+                        </div>
+                        <button
+                          class="btn btn-secondary register-btn d-inline-flex justify-content-center align-items-center w-100 btn-block"
+                          type="submit"
+                        >
+                          Sign In<i class="feather-arrow-right-circle ms-2"></i>
+                        </button>
+                        <div class="form-group">
+                          <div class="login-options text-center">
+                            <span class="text">Or continue with</span>
+                          </div>
+                        </div>
+                        <div class="form-group mb-0">
+                          <ul
+                            class="social-login d-flex justify-content-center align-items-center"
+                          >
+                            <li class="text-center">
+                              <button
+                                type="button"
+                                class="btn btn-social d-flex align-items-center justify-content-center"
+                              >
+                                <img
+                                  src="assets/img/icons/google.svg"
+                                  class="img-fluid"
+                                  alt="Google"
+                                />
+                                <span>Google</span>
+                              </button>
+                            </li>
+                            <li class="text-center">
+                              <button
+                                type="button"
+                                class="btn btn-social d-flex align-items-center justify-content-center"
+                              >
+                                <img
+                                  src="assets/img/icons/facebook.svg"
+                                  class="img-fluid"
+                                  alt="Facebook"
+                                />
+                                <span>Facebook</span>
+                              </button>
+                            </li>
+                          </ul>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <p>
+                  Don’t have an account?
+                  <a routerLink="/register">Sign up!</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

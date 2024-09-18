@@ -1,0 +1,44 @@
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="nameEvent">Event Name</label>
+      <input type="text" class="form-control" id="nameEvent" required [(ngModel)]="event.nameEvent" name="nameEvent">
+    </div>
+    <div class="form-group">
+      <label for="descriptionEvent">Event Description</label>
+      <input type="text" class="form-control" id="descriptionEvent" required [(ngModel)]="event.descriptionEvent" name="descriptionEvent">
+    </div>
+    <div class="form-group">
+      <label for="domain">Domain</label>
+      <input type="text" class="form-control" id="domain" required [(ngModel)]="event.domain" name="domain">
+    </div>
+    <div class="form-group">
+      <label for="dateEvent">Event Date</label>
+      <input type="date" class="form-control" id="dateEvent" required [(ngModel)]="event.dateEvent" name="dateEvent">
+    </div>
+    <div class="form-group">
+      <label for="likes">Likes</label>
+      <input type="number" class="form-control" id="likes" required [(ngModel)]="event.likes" name="likes">
+    </div>
+    <div class="form-group">
+      <label for="dislikes">Dislikes</label>
+      <input type="number" class="form-control" id="dislikes" required [(ngModel)]="event.dislikes" name="dislikes">
+    </div>
+    <div class="form-group">
+      <label for="investNeeded">Invest Needed</label>
+      <input type="number" class="form-control" id="investNeeded" required [(ngModel)]="event.investNeeded" name="investNeeded">
+    </div>
+    <div class="form-group">
+      <label for="type">Type</label>
+      <input type="text" class="form-control" id="type" required [(ngModel)]="event.type" name="type">
+    </div>
+    <div class="form-group">
+      <label for="eventStatus">Event Status</label>
+      <input type="text" class="form-control" id="eventStatus" required [(ngModel)]="event.eventStatus" name="eventStatus">
+    </div>
+    
+    <button type="submit" class="btn btn-success">Update</button>
+    <button type="button" (click)="BacktoAdminDashboard()" class="btn btn-success">Back</button> 
+  </form>
+</div>
+

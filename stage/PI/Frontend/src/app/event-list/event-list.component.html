@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>DreamSports</title>
+    
+
+</head>
+
+<body>
+    
+
+                <div class="main-wrapper events-page innerpagebg">
+                  <header class="header header-sticky">
+                    <div class="container-fluid">
+                    <nav class="navbar navbar-expand-lg header-nav">
+                    <div class="navbar-header">
+                    <a id="mobile_btn" href="javascript:void(0);">
+                    <span class="bar-icon">
+                    <span></span>
+                    <span></span>
+                    <style>
+                        .custom-btn {
+                            background-color: #a0aaa0; /* Couleur de fond vert moins vif */
+                            border: 2px solid#a0aaa0; /* Bordure vert moins vif */
+                            color: #fff; /* Couleur du texte blanc */
+                            font-weight: bold; /* Texte en gras */
+                            padding: 10px 30px; /* Espacement interne */
+                            border-radius: 5px; /* Coins arrondis */
+                            text-decoration: none; /* Supprimer la décoration de texte */
+                            display: inline-block; /* Pour que le padding soit appliqué correctement */
+                            margin: 20px; /* Ajouter de l'espace autour des boutons */
+                            transition: background-color 0.3s ease, color 0.3s ease; /* Transition pour l'effet hover */
+                        }
+                
+                        .custom-btn:hover {
+                            background-color: #ccff00e3; /* Couleur de fond pour le hover */
+                            border-color:#ccff00e3; /* Bordure pour le hover */
+                            color: #f7f3f3; /* Couleur du texte pour le hover */
+                        }
+                    </style>
+                    <span></span>
+                    </span>
+                    </a>
+                    <a href="index.html" class="navbar-brand logo">
+                        <img src="./assets/img/logo-img.png" class="img-fluid small-logo "   alt="Logo" />
+                    </a>
+                    </div>
+                    <div class="main-menu-wrapper">
+                    <div class="menu-header">
+                    <a href="index.html" class="menu-logo">
+                    <img src="assets/img/logo-black.svg" class="img-fluid" alt="Logo">
+                    </a>
+                    <a id="menu_close" class="menu-close" href="javascript:void(0);"> <i class="fas fa-times"></i></a>
+                    </div>
+                    <ul class="main-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="has-submenu">
+                    <a href="#">Coaches <i class="fas fa-chevron-down"></i></a>
+                    <ul class="submenu">
+                    <li class="has-submenu">
+                    <a href="#">Coaches Map</a>
+                    <ul class="submenu inner-submenu">
+                    <li><a href="coaches-map.html">Coaches Map</a></li>
+                    <li><a href="coaches-map-sidebar.html">Coaches Map Sidebar</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="coaches-grid.html">Coaches Grid</a></li>
+                    <li><a href="coaches-list.html">Coaches List</a></li>
+                    <li><a href="coaches-grid-sidebar.html">Coaches Grid Sidebar</a></li>
+                    <li><a href="coaches-list-sidebar.html">Coaches List Sidebar</a></li>
+                    <li class="has-submenu">
+                    <a href="javascript:void(0);">Booking</a>
+                    <ul class="submenu">
+                    <li><a href="cage-details.html">Book a Court</a></li>
+                    <li><a href="coach-details.html">Book a Coach</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="coach-detail.html">Coach Details</a></li>
+                    <li class="has-submenu">
+                    <a href="#">Venue</a>
+                    <ul class="submenu inner-submenu">
+                    <li><a href="listing-list.html">Venue List</a></li>
+                    <li><a href="venue-details.html">Venue Details</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="coach-dashboard.html">Coach Dashboard</a></li>
+                    <li><a href="all-court.html">Coach Courts</a></li>
+                    <li><a href="add-court.html">List Your Court</a></li>
+                    <li><a href="coach-chat.html">Chat</a></li>
+                    <li><a href="coach-earning.html">Earnings</a></li>
+                    <li><a href="coach-wallet.html">Wallet</a></li>
+                    <li><a href="coach-profile.html">Profile Settings</a></li>
+                    <li><a href="invoice.html">Invoice</a></li>
+                    </ul>
+                    </li>
+                    <li class="has-submenu">
+                    <a href="#">User <i class="fas fa-chevron-down"></i></a>
+                    <ul class="submenu">
+                    <li><a href="user-dashboard.html">User Dashboard</a></li>
+                    <li><a href="user-bookings.html">Bookings</a></li>
+                    <li><a href="user-chat.html">Chat</a></li>
+                    <li><a href="user-invoice.html">Invoice</a></li>
+                    <li><a href="user-wallet.html">Wallet</a></li>
+                    <li><a href="user-profile.html">Profile Edit</a></li>
+                    <li><a href="user-setting-password.html">Change Password</a></li>
+                    <li><a href="user-profile-othersetting.html">Other Settings</a></li>
+                    </ul>
+                    </li>
+                    <li class="has-submenu active">
+                    <a href="#">Pages <i class="fas fa-chevron-down"></i></a>
+                    <ul class="submenu">
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="our-teams.html">Our Team</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li class="active"><a href="events.html">Events</a></li>
+                    <li class="has-submenu">
+                    <a href="javascript:void(0);">Authentication</a>
+                    <ul class="submenu">
+                    <li><a href="register.html">Signup</a></li>
+                    <li><a href="login.html">Signin</a></li>
+                    <li><a href="forgot-password.html">Forgot Password</a></li>
+                    <li><a href="change-password.html">Reset Password</a></li>
+                    </ul>
+                    </li>
+                    <li class="has-submenu">
+                    <a href="javascript:void(0);">Error Page</a>
+                    <ul class="submenu">
+                    <li><a href="error-404.html">404 Error</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li class="has-submenu">
+                    <a href="javascript:void(0);">Testimonials</a>
+                    <ul class="submenu">
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="testimonials-carousel.html">Testimonials Carousel</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="terms-condition.html">Terms & Conditions</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="maintenance.html">Maintenance</a></li>
+                    <li><a href="coming-soon.html">Coming Soon</a></li>
+                    </ul>
+                    </li>
+                    <li class="has-submenu">
+                    <a href="#">Blog <i class="fas fa-chevron-down"></i></a>
+                    <ul class="submenu">
+                    <li><a href="blog-list.html">Blog List</a></li>
+                    <li class="has-submenu">
+                    <a href="javascript:void(0);">Blog List Sidebar</a>
+                    <ul class="submenu">
+                    <li><a href="blog-list-sidebar-left.html">Blog List Sidebar Left</a></li>
+                    <li><a href="blog-list-sidebar-right.html">Blog List Sidebar Right</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="blog-grid.html">Blog Grid</a></li>
+                    <li class="has-submenu">
+                    <a href="javascript:void(0);">Blog Grid Sidebar</a>
+                    <ul class="submenu">
+                    <li><a href="blog-grid-sidebar-left.html">Blog Grid Sidebar Left</a></li>
+                    <li><a href="blog-grid-sidebar-right.html">Blog Grid Sidebar Right</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="blog-details.html">Blog Details</a></li>
+                    <li class="has-submenu">
+                    <a href="javascript:void(0);">Blog Details Sidebar</a>
+                    <ul class="submenu">
+                    <li><a href="blog-details-sidebar-left.html">Blog Detail Sidebar Left</a></li>
+                    <li><a href="blog-details-sidebar-right.html">Blog Detail Sidebar Right</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="blog-carousel.html">Blog Carousel</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                    <li class="login-link">
+                    <a href="register.html">Sign Up</a>
+                    </li>
+                    <li class="login-link">
+                    <a href="login.html">Sign In</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <ul class="nav header-navbar-rht">
+                    <li class="nav-item">
+                    <div class="nav-link btn btn-primary log-register">
+                    <a href="login.html"><span><i class="feather-users"></i></span>Login</a> / <a href="register.html">Register</a>
+                    </div>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link btn btn-secondary" href="add-court.html"><span><i class="feather-check-circle"></i></span>List Your Court</a>
+                    </li>
+                    </ul>
+                    </nav>
+                    </div>
+                    </header>
+                    
+
+
+                    <div class="breadcrumb breadcrumb-list mb-0">
+                        <span class="primary-right-round"></span>
+                        <div class="container">
+                            <h1 class="text-white">Events</h1>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li>Events</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="container">
+                            <div class="row">
+                                <!-- Section des événements -->
+                                <div class="pagination-controls"></div>
+                                <div class="col-md-4 col-sm-6 mb-4" *ngFor="let event of paginatedEvents | async">
+
+                                    <div class="card h-100">
+                                        <div class="card-img-container">
+                                            <img src="./assets/img/eventImage.jpg" alt="Event Image" class="card-img">
+                                           
+                                        </div>
+                                        <div class="card-body">
+                                            <h4 class="card-title font-weight-bold">{{ event.nameEvent }}</h4>
+                                            
+                                            
+                                            <p class="card-text">
+                                                <span class="badge bg-info text-white">{{ event.likes }} Likes</span>
+                                                <span class="badge bg-danger text-white">{{ event.dislikes }} Dislikes</span>
+                                            </p>
+                                            <div class="card-text">
+                                                <div class="like-dislike">
+                                                    <span>
+                                                        <i class="far fa-thumbs-up"></i> <!-- Emoji Like -->
+                                                        <span class="badge badge-primary">{{ event.likes }}</span> <!-- Badge Like avec le nombre de likes -->
+                                                    </span>
+                                                    <span>
+                                                        <i class="far fa-thumbs-down"></i> <!-- Emoji Dislike -->
+                                                        <span class="badge badge-danger">{{ event.dislikes }}</span> <!-- Badge Dislike avec le nombre de dislikes -->
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer text-muted d-flex justify-content-between align-items-center">
+                                            <small class="text-muted">{{ event.dateEvent | date }}</small>
+                                        </div>
+                                        <div class="d-flex">
+                                            <span><a (click)="likeEvent(event)" ><i style="font-size:25px;color:rgb(144, 189, 108);" class="fa fa-heart"></i></a></span>
+                                            <span><a (click)="dislikeEvent(event)" ><i style="font-size:25px;color:rgb(223, 148, 126);" class="fa fa-thumbs-down fa-2xl"></i></a></span>
+                                        </div>
+                                        <div>
+                                            <!-- Utilisation de votre attribut pour router -->
+                                            <a [routerLink]="['/assign-shareholder', event.idEvent]"class="custom-btn">Invest</a>
+                            
+                                    
+                                            <button (click)="eventDetails(event.idEvent)" class="custom-btn">Details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button (click)="changePage(currentPage - 1)" class="pagination-button secondary-button" [disabled]="currentPage <= 1">Previous</button>
+                                <span class="pagination-info">Page {{ currentPage }} of {{ totalPages }}</span>
+                                <button (click)="changePage(currentPage + 1)" class="pagination-button secondary-button" [disabled]="currentPage >= totalPages">Next</button>
+                              </div>
+                            </div>
+                          </div>
+                          </div>
+                            
+                     
+                    
+                  
+                  
+
+                    <footer class="footer">
+                        <div class="container">
+                            <div class="footer-join">
+                                <h2>We Welcome Your Passion And Expertise</h2>
+                                <p class="sub-title">Join our empowering sports community today and grow with us.</p>
+                                <a href="register.html" class="btn btn-primary"><i class="feather-user-plus"></i> Join With Us</a>
+                            </div>
+
+
+                            <div class="footer-top">
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-6">
+
+                                        <div class="footer-widget footer-menu">
+                                            <h4 class="footer-title">Contact us</h4>
+                                            <div class="footer-address-blk">
+                                                <div class="footer-call">
+                                                    <span>Toll free Customer Care</span>
+                                                    <p>+017 123 456 78</p>
+                                                </div>
+                                                <div class="footer-call">
+                                                    <span>Need Live Suppot</span>
+                                                    <p><a href="https://dreamsports.dreamstechnologies.com/cdn-cgi/l/email-protection" class="__cf_email__"
+                                                            data-cfemail="dfbbadbabeb2acafb0adabac9fbaa7beb2afb3baf1bcb0b2">[email&#160;protected]</a></p>
+                                                </div>
+                                            </div>
+                                            <div class="social-icon">
+                                                <ul>
+                                                    <li>
+                                                        <a href="javascript:void(0);" class="facebook"><i class="fab fa-facebook-f"></i> </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:void(0);" class="twitter"><i class="fab fa-twitter"></i> </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:void(0);" class="instagram"><i class="fab fa-instagram"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:void(0);" class="linked-in"><i class="fab fa-linkedin-in"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-2 col-md-6">
+
+                                        <div class="footer-widget footer-menu">
+                                            <h4 class="footer-title">Quick Links</h4>
+                                            <ul>
+                                                <li>
+                                                    <a href="about-us.html">About us</a>
+                                                </li>
+                                                <li>
+                                                    <a href="services.html">Services</a>
+                                                </li>
+                                                <li>
+                                                    <a href="events.html">Events</a>
+                                                </li>
+                                                <li>
+                                                    <a href="blog-grid.html">Blogs</a>
+                                                </li>
+                                                <li>
+                                                    <a href="contact-us.html">Contact us</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-2 col-md-6">
+
+                                        <div class="footer-widget footer-menu">
+                                            <h4 class="footer-title">Support</h4>
+                                            <ul>
+                                                <li>
+                                                    <a href="contact-us.html">Contact Us</a>
+                                                </li>
+                                                <li>
+                                                    <a href="faq.html">Faq</a>
+                                                </li>
+                                                <li>
+                                                    <a href="privacy-policy.html">Privacy Policy</a>
+                                                </li>
+                                                <li>
+                                                    <a href="terms-condition.html">Terms & Conditions</a>
+                                                </li>
+                                                <li>
+                                                    <a href="pricing.html">Pricing</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-2 col-md-6">
+
+                                        <div class="footer-widget footer-menu">
+                                            <h4 class="footer-title">Other Links</h4>
+                                            <ul>
+                                                <li>
+                                                    <a href="coaches-grid.html">Coaches</a>
+                                                </li>
+                                                <li>
+                                                    <a href="listing-grid.html">Sports Venue</a>
+                                                </li>
+                                                <li>
+                                                    <a href="coach-details.html">Join As Coach</a>
+                                                </li>
+                                                <li>
+                                                    <a href="coaches-map.html">Add Venue</a>
+                                                </li>
+                                                <li>
+                                                    <a href="my-profile.html">My Account</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-2 col-md-6">
+
+                                        <div class="footer-widget footer-menu">
+                                            <h4 class="footer-title">Our Locations</h4>
+                                            <ul>
+                                                <li>
+                                                    <a href="javascript:void(0);">Germany</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0);">Russia</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0);">France</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0);">UK</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0);">Colombia</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-2 col-md-6">
+
+                                        <div class="footer-widget footer-menu">
+                                            <h4 class="footer-title">Download</h4>
+                                            <ul>
+                                                <li>
+                                                    <a href="#"><img src="assets/img/icons/icon-apple.svg" alt="Icon"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><img src="assets/img/icons/google-icon.svg" alt="Icon"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="footer-bottom">
+                            <div class="container">
+                                <div class="copyright">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-6">
+                                            <div class="copyright-text">
+                                                <p class="mb-0">&copy; 2023 DreamSports - All rights reserved.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <div class="dropdown-blk">
+                                                <ul class="navbar-nav selection-list">
+                                                    <li class="nav-item dropdown">
+                                                        <div class="lang-select">
+                                                            <span class="select-icon"><i class="feather-globe"></i></span>
+                                                            <select class="select">
+                                                                <option>English (US)</option>
+                                                                <option>UK</option>
+                                                                <option>Japan</option>
+                                                            </select>
+                                                        </div>
+                                                    </li>
+                                                    <li class="nav-item dropdown">
+                                                        <div class="lang-select">
+                                                            <span class="select-icon"></span>
+                                                            <select class="select">
+                                                                <option>$ USD</option>
+                                                                <option>$ Euro</option>
+                                                            </select>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </footer>
+
+             
+
+              </body>                  
+
+            </html>

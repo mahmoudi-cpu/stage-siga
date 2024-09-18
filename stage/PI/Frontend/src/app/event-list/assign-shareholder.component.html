@@ -1,0 +1,68 @@
+<div class="main-wrapper">
+  <div class="breadcrumb breadcrumb-list mb-0">
+      <div class="container">
+          <h1 class="text-rgb(194, 230, 194)"><br></h1>
+      </div>
+  </div>
+  <div class="content court-bg  d-flex justify-content-center align-items-center">
+    <div class="container">
+        <h1 class="text-center mb-4">Shareholder Registration</h1> <!-- En-tête -->
+        <div class="col-sm-12">
+            <div class="profile-detail-group">
+                <div class="card p-4">
+                    <form (ngSubmit)="save()" #shareholderForm="ngForm">
+                   
+                        <div class="mb-3">
+                            <label for="lastNameShareholder" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastNameShareholder" required minlength="2" [(ngModel)]="shareholder.lastNameShareholder" name="lastNameShareholder" placeholder="Enter Last Name">
+                            <div *ngIf="shareholderForm.controls['lastNameShareholder'].invalid && (shareholderForm.controls['lastNameShareholder'].dirty || shareholderForm.controls['lastNameShareholder'].touched)" class="text-danger">
+                                <div *ngIf="shareholderForm.controls['lastNameShareholder'].errors?.['required']">Last Name is required.</div>
+                                <div *ngIf="shareholderForm.controls['lastNameShareholder'].errors?.['minlength']">Last Name must be at least 2 characters long.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="firstNameShareholder" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="firstNameShareholder" required minlength="2" [(ngModel)]="shareholder.firstNameShareholder" name="firstNameShareholder" placeholder="Enter First Name">
+                            <div *ngIf="shareholderForm.controls['firstNameShareholder'].invalid && (shareholderForm.controls['firstNameShareholder'].dirty || shareholderForm.controls['firstNameShareholder'].touched)" class="text-danger">
+                                <div *ngIf="shareholderForm.controls['firstNameShareholder'].errors?.['required']">First Name is required.</div>
+                                <div *ngIf="shareholderForm.controls['firstNameShareholder'].errors?.['minlength']">First Name must be at least 2 characters long.</div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="mb-3">
+                            <label for="investment" class="form-label">Investment Amount</label>
+                            <input type="number" class="form-control" id="investment" required [(ngModel)]="shareholder.investment" name="investment" placeholder="Enter Investment" min="10000">
+                            <div *ngIf="shareholderForm.controls['investment'].errors?.['required'] && shareholderForm.controls['investment'].touched" class="text-danger">Investment Amount is required.</div>
+                        
+                            <div *ngIf="shareholderForm.controls['investment'].errors?.['min']" class="text-danger">Investment Amount must be greater than or equal to 10000.</div>
+                        </div>
+                        
+                        
+                        
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required [(ngModel)]="shareholder.email" name="email"placeholder="Enter Email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="numTel" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="numTel" required pattern="[0-9]{8}" [(ngModel)]="shareholder.numTel" name="numTel" placeholder="Enter Phone Number">
+                            <div *ngIf="shareholderForm.controls['numTel'].errors?.['required'] && shareholderForm.controls['numTel'].touched" class="text-danger">Phone Number is required.</div>
+                            <div *ngIf="shareholderForm.controls['numTel'].errors?.['pattern'] && shareholderForm.controls['numTel'].touched" class="text-danger">Phone Number must be 8 digits.</div>
+                        </div>
+                    
+                        <div class="mb-3">
+                            <label for="partner" class="form-label">Type of Shareholder</label>
+                            <input type="text" class="form-control" id="partner" required [(ngModel)]="shareholder.partner" name="partner">
+                        </div>
+                        <div *ngIf="!isEmailValid(shareholder.email)" class="text-danger">Veuillez entrer une adresse e-mail valide.</div>
+                        <button type="submit" class="btn btn-success" [disabled]="!shareholderForm.valid || !isEmailValid(shareholder.email)">Register</button>
+                    </form>
+                    
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

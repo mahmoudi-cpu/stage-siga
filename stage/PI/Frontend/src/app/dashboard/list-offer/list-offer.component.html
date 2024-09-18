@@ -1,0 +1,247 @@
+
+
+<div class="content court-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="court-tab-content">
+
+          <div class="card payment-card">
+            <div class="payment-info ">
+              <div class="payment-btn">
+                <a href="javascript:void(0);" class="btn" data-bs-toggle="modal" data-bs-target="#add-payment">Add Offer</a>
+              </div>
+            </div>
+            <div class="modal custom-modal fade payment-modal" id="add-payment" role="dialog">
+              <div class="modal-dialog modal-dialog-centered modal-md">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <div class="form-header modal-header-title">
+                      <h4 class="mb-0">Add offer</h4>
+                    </div>
+                    <a class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span class="align-center" aria-hidden="true"><i class="feather-x"></i></span></a>
+                  </div>
+
+                  <div class="modal-body">                  
+                    <form (ngSubmit)="addOffer()">
+                      <!-- Date  -->
+                      <div class="mb-2">
+                        <label class="form-label"> Date</label>
+                        <div class="form-icon">
+                          <input type="text" class="form-control" [value]="getCurrentDate()" disabled>
+                          <span class="cus-icon">
+                            <i class="feather-calendar icon-date"></i>
+                          </span>
+                        </div>
+                      </div>
+                      <!-- Status  -->
+                      <div class="input-space">
+                        <label class="mb-2">Status</label>
+                        <input type="text" class="form-control" [value]="offerForm.controls['status'].value" [disabled]="offerForm.controls['status'].value === 'AVAILABLE'" >      
+                      </div>
+                      <!-- Type Loan  -->
+                      <div class="input-space">
+                        <label class="mb-2">Type Loan</label>
+                        <select class="form-control"  placeholder="choose a type" name="typeLoan" [(ngModel)]="offerForm.value.typeLoan">
+                          <option value="">choose a type</option>
+                          <option *ngFor="let typeLoan of typeLoans" [ngValue]="typeLoan">{{typeLoan}}</option>
+                        </select>  
+                      </div>                             
+                      <!-- Max Amount  -->
+                      <div class="input-space">
+                        <label class="mb-2"> Max Amount </label>
+                          <div class="input-group" >
+                              <input type="number" class="form-control" [ngModel]="offerForm.controls['maxAmnt'].value" (ngModelChange)="offerForm.controls['maxAmnt'].setValue($event.target.value)" [ngClass]="{'is-invalid': offerForm.controls['maxAmnt'].invalid && (offerForm.controls['maxAmnt'].dirty || offerForm.controls['maxAmnt'].touched)}">
+                                <div  class="input-group-append" >
+                                <span class="input-group-text">.000</span>
+                            </div>
+                            <div class="input-group-prepend">
+                              <span class="input-group-text btn-primary text-white">DT</span>
+                            </div>
+                          </div>
+                          <span *ngIf="offerForm.controls['maxAmnt'].invalid && (offerForm.controls['maxAmnt'].dirty || offerForm.controls['maxAmnt'].touched)" class="error invalid-feedback">Please enter a valid number.</span>
+                      </div>
+                      <!-- Min Amount  -->
+                      <div class="input-space">
+                        <label class="mb-2"> Min Amount </label>
+                          <div class="input-group">
+                            <input type="number" class="form-control" [ngModel]="offerForm.controls['minAmnt'].value" (ngModelChange)="offerForm.controls['minAmnt'].setValue($event.target.value)" [ngClass]="{'is-invalid': offerForm.controls['minAmnt'].invalid && (offerForm.controls['minAmnt'].dirty || offerForm.controls['minAmnt'].touched)}">
+                            <div class="input-group-append">
+                              <span class="input-group-text" >.000</span>
+                            </div>
+                            <div class="input-group-prepend">
+                              <span class="input-group-text btn-primary text-white">DT</span>
+                            </div>
+                          </div>
+                          <span *ngIf="offerForm.controls['maxAmnt'].invalid && (offerForm.controls['maxAmnt'].dirty || offerForm.controls['maxAmnt'].touched)" class="error invalid-feedback">Please enter a valid number.</span>  
+                      </div>  
+                       <!-- minRepaymentPer -->
+                       <div class="input-space">
+                        <label class="mb-2">Min Periode</label>
+                        <div class="input-group">
+                          <input type="number" class="form-control" [ngModel]="offerForm.controls['minRepaymentPer'].value" (ngModelChange)="offerForm.controls['minRepaymentPer'].setValue($event.target.value)" [ngClass]="{'is-invalid': offerForm.controls['minRepaymentPer'].invalid && (offerForm.controls['minRepaymentPer'].dirty || offerForm.controls['minRepaymentPer'].touched)}">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text btn-primary text-white">{{ offerForm.value.typeLoan === 'PROJECT' ? 'Years' : 'Month' }}</span>
+                          </div>
+                        </div>
+                        <span *ngIf="offerForm.controls['minRepaymentPer'].invalid && (offerForm.controls['minRepaymentPer'].dirty || offerForm.controls['minRepaymentPer'].touched)" class="error invalid-feedback">Please enter a value greater than or equal to 2.</span>
+                      </div> 
+                      <!-- TMM  -->
+                      <div class="input-space">
+                        <label class="mb-2">TMM +</label>
+                        <div class="input-group">
+                          <input type="number" class="form-control"[(ngModel)]="tmmValue" name="tmm" disabled>
+                          <div class="input-group-prepend">
+                            <span class="input-group-text btn-primary text-white">%</span>
+                          </div>
+                        </div> 
+                      </div>
+                      <!-- Interest rate   -->
+                      <div class="input-space">
+                        <label class="mb-2">Interest rate </label>
+                        <div class="input-group">
+                          <input type="number" class="form-control"  >
+                          <div class="input-group-prepend">
+                            <span class="input-group-text btn-primary text-white">%</span>
+                          </div>
+                        </div>    
+                      </div>
+
+                      <div class="modal-footer">
+                        <div class="table-accept-btn">
+                          <a href="javascript:;" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close" (click)="offerForm.reset()">Reset</a>
+                          <a href="javascript:;" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close" >Submit</a>
+                        </div>
+                      </div> 
+                       
+                    </form>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>          
+          
+          <div class="card card-tableset">
+            <div class="card-body">
+              <!--All offers/ sort-->
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="sortby-section court-sortby-section">
+                    <div class="sorting-info">
+                        <div class="row d-flex align-items-center">
+                            <!--All offers-->
+                          <div class="col-xl-6 col-lg-6 col-sm-12 col-12">
+                              <div class="coach-court-list">
+                                <ul class="nav">
+                                  <li><a class="active" >All offers</a></li>
+                                </ul>
+                              </div>
+                          </div>
+                          <!--sort by-->
+                          <div class="col-xl-6 col-lg-6 col-sm-12 col-12">
+                            <div class="sortby-filter-group court-sortby">                          
+                              <div class="sortbyset">
+                                <span class="sortbytitle">Sort By</span>
+                                  <div class="sorting-select">
+                                    <select class="form-control select">
+                                      <option>Available</option>
+                                      <option>Unavailable</option>
+                                    </select>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="coache-head-blk">
+                <div class="row align-items-center">
+                  <div class="col-md-6">
+                    <div class="court-table-head">
+                      <h4>offers</h4>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div id="tablefilter"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="table-responsive">
+                <table class="table table-borderless datatable">
+                  <thead class="thead-light">
+                    <tr>
+                      <th>user id</th>
+                      <th>id Offer</th>
+                      <th>status</th>
+                      <th>typeLoan</th>
+                      <th>offrDate</th>
+                      <th>maxAmnt</th>
+                      <th>minAmnt</th>
+                      <th>minRepaymentPer</th>
+                      <th>tmm</th>
+                      <th>intRate</th>
+                      <th>change status</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let o of offers ">
+                      <td>{{ o.user.id }}</td> 
+                      
+                      <td>{{o.idOffer}}</td>
+                      <td>{{o.status}}</td>
+                      <td>{{o.typeLoan}}</td>
+                      <td>{{o.offrDate}}</td>
+                      <td>{{o.maxAmnt}}</td>
+                      <td>{{o.minAmnt}}</td>
+                      <td>{{o.minRepaymentPer}}</td>
+                      <td>{{o.tmm}}</td>
+                      <td>{{o.intRate}}</td>
+                      <td class="table-inset-btn">
+                        <div class="interset-btn">
+                          <div class="status-toggle d-inline-flex align-items-center">
+                            <input type="checkbox" class="check" (change)="changeStatus($event, o)">
+                            <label for="status_{{ o.idOffer }}" class="checktoggle">checkbox</label>
+                        </div>
+                        </div>
+                      </td>
+                      <td class="text-end">
+                        <div class="dropdown dropdown-action table-drop-action">
+                            <a href="#" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-h"></i></a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a class="dropdown-item" href="javascript:void(0);"><i class="feather-edit"></i>Edit</a>
+                                <a class="dropdown-item" href="javascript:void(0);"><i class="feather-trash"></i>Delete</a>
+                            </div>
+                        </div>
+                    </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-footer">
+            <div class="row">
+              <div class="col-md-6">
+                <div id="tablelength"></div>
+              </div>
+              <div class="col-md-6">
+                <div id="tablepage"></div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,3 @@
+//interface ChatBotResponseDto {
+//  response: string;
+//}

@@ -1,0 +1,27 @@
+<h2>Shareholder Details</h2>
+<hr/>
+<div *ngIf="shareholder">
+  <div>
+    <label><b>Last Name: </b></label> {{ shareholder.lastNameShareholder }}
+  </div>
+  <div>
+    <label><b>First Name: </b></label> {{ shareholder.firstNameShareholder }}
+  </div>
+  <div>
+    <label><b>Email: </b></label> {{ shareholder.email }}
+  </div>
+  <div>
+    <label><b>Phone Number: </b></label> {{ shareholder.numTel }}
+  </div>
+  <div>
+    <label><b>Partner: </b></label> {{ shareholder.partner }}
+  </div>
+  <div>
+    <label><b>Investment: </b></label> {{ shareholder.investment }}
+  </div>
+ 
+</div>
+
+<br>
+<br>
+<button (click)="BacktoAdminDashboard()" class="btn btn-primary">Back to Dashboard</button><br>

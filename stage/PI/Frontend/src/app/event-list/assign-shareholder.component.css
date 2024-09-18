@@ -1,0 +1,8 @@
+.green-background {
+    background-color: rgb(194, 230, 194);
+    padding: 10px; /* Ajoutez un padding si nécessaire pour un espacement entre les champs */
+    margin-bottom: 10px; /* Ajoutez une marge en bas pour séparer les champs */
+}
+.custom-form {
+    max-width: 500px; /* Ajustez la largeur maximale selon vos besoins */
+}

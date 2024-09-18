@@ -1,0 +1,36 @@
+<div class="Admin Dashboard">
+  <div class="panel-heading">
+    <h2>Shareholder List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Last Name</th>
+          <th>First Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>Partner</th>
+          <th>Investment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let shareholder of shareholders | async">
+          <td>{{ shareholder.lastNameShareholder }}</td>
+          <td>{{ shareholder.firstNameShareholder }}</td>
+          <td>{{ shareholder.email }}</td>
+          <td>{{ shareholder.numTel }}</td>
+          <td>{{ shareholder.partner }}</td>
+          <td>{{ shareholder.investment }}</td>
+          <td>
+            <button (click)="shareholderDetails(shareholder.idShareholder)" class="btn btn-info">Details</button>
+
+         <button (click)="updateShareholder(shareholder.idShareholder)" class="btn btn-info" style="margin-left: 10px">Update</button>
+            <button (click)="deleteShareholder(shareholder.idShareholder)" class="btn btn-info" style="margin-left: 10px">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button (click)="addShareholder()" class="btn btn-info">Add Shareholder</button>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<h3>Create Event</h3>
+
+<div [hidden]="submitted" style="width: 400px;">
+  <div class="container">
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="nameEvent">Event Name</label>
+        <input type="text" class="form-control" id="nameEvent" required [(ngModel)]="event.nameEvent" name="nameEvent">
+      </div>
+      <div class="form-group">
+        <label for="descriptionEvent">Event Description</label>
+        <input type="text" class="form-control" id="descriptionEvent" required [(ngModel)]="event.descriptionEvent" name="descriptionEvent">
+      </div>
+      <div class="form-group">
+        <label for="domain">Domain</label>
+        <input type="text" class="form-control" id="domain" required [(ngModel)]="event.domain" name="domain">
+      </div>
+      <div class="form-group">
+        <label for="dateEvent">Event Date</label>
+        <input type="date" class="form-control" id="dateEvent" required [(ngModel)]="event.dateEvent" name="dateEvent">
+      </div>
+  
+      <div class="form-group has-feedback">
+        <label for="investNeeded">Investment Needed</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-money-bill-wave"></i></span>
+          </div>
+          <input type="number" class="form-control" id="investNeeded" required min="7000" [(ngModel)]="event.investNeeded" name="investNeeded">
+        </div>
+      </div>
+      
+      <!-- Select for Event Type -->
+      <div class="form-group">
+        <label for="type">Event Type</label>
+        <select class="form-control" id="type" required [(ngModel)]="event.type" name="type">
+          <option [ngValue]="null">Select Type</option>
+          <option *ngFor="let type of eventTypes" [ngValue]="type">{{type}}</option>
+        </select>
+      </div>
+
+      <!-- Select for Event Status -->
+      <div class="form-group">
+        <label for="eventStatus">Event Status</label>
+        <select class="form-control" id="eventStatus" required [(ngModel)]="event.eventStatus" name="eventStatus">
+          <option [ngValue]="null">Select Status</option>
+          <option *ngFor="let status of eventStatuses" [ngValue]="status">{{status}}</option>
+        </select>
+      </div>
+
+      <div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

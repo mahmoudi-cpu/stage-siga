@@ -1,0 +1,51 @@
+
+<p>list-amortization works!</p>
+
+<div class="container-fluid py-4">
+<div class="row">
+    <div class="col-12">
+      <div class="card mb-4">
+        <div class="card-header pb-0">
+          <h6>All amortizations:</h6>
+        </div>
+        <div class="card-body px-0 pt-0 pb-2">
+          <div class="table-responsive p-0">
+            <table class="table align-items-center justify-content-center mb-0">
+              <thead>
+                <tr>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">idAmt</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">periode</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">date</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">start Amount</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">intrest</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">amortization</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">annuity</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">frais</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">agio</th>
+                    <th class="text-secondary opacity-7">action</th>
+                  </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let a of amortizations">
+                    <td>{{a.idAmt}}</td>
+                    <td>{{a.date}}</td>
+                    <td>{{a.periode}}</td>
+                    <td>{{a.startAmount}}</td>
+                    <td>{{a.intrest}}</td>
+                    <td>{{a.amrt}}</td>
+                    <td>{{a.annuity}}</td>                        
+                    <td>{{a.frais}}</td>
+                    <td>{{a.agio}}</td>
+                    <td>
+                        <button> detail </button>
+                        <button> delete </button>
+                    </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
